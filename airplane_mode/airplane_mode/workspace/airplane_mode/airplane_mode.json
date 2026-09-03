@@ -1,0 +1,36 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"nn_LkPc89U\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airplane Mode</span>\",\"col\":12}}]",
+ "creation": "2026-06-18 12:30:46.849816",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "message-1",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Airplane Mode",
+ "links": [],
+ "modified": "2026-06-22 10:57:13.157088",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplane Mode",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Home",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Airlines",
+   "link_to": "Airline",
+   "type": "DocType"
+  }
+ ],
+ "title": "Airplane Mode"
+}

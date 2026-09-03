@@ -1,0 +1,3 @@
+<p>Flight {{ doc.name }} departs tomorrow.</p>
+<p>Route: {{ doc.source_airport_code }} → {{ doc.destination_airport_code }}</p>
+<p>Departure: {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} at {{ doc.time_of_departure }}</p>

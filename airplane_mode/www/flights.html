@@ -1,0 +1,31 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container my-5">
+    <h1>Flights</h1>
+
+    {% for flight in flights %}
+        {% set airline = frappe.db.get_value("Airplane", flight.airplane, "airline") %}
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4>{{ airline }}</h4>
+
+                <p>
+                    <strong>{{ flight.source_airport_code }} → {{ flight.destination_airport_code }}</strong>
+                </p>
+
+                <p>
+                    {{ frappe.utils.format_date(flight.date_of_departure, "d MMMM, YYYY") }}
+                    | {{ flight.time_of_departure }}
+                    | {{ frappe.utils.format_duration(flight.duration) }}
+                </p>
+
+                <a class="btn btn-primary" href="/{{ flight.route }}">
+                    View Flight
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
