@@ -10,7 +10,7 @@ class RentPayment(Document):
 	def validate(self):
 		contract = frappe.get_doc("Shop Contract", self.shop_contract)
 		self.shop = contract.shop
-		self.tenant = contract.tenant	
+		self.tenant = contract.tenant
 
 		existing_payment = frappe.db.exists(
 			"Rent Payment",
