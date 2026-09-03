@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "prompt",
+ "autoname": "format:{airplane}-{date_of_departure}-{#####}",
  "creation": "2026-06-23 12:19:32.540968",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,6 +12,7 @@
   "time_of_departure",
   "duration",
   "status",
+  "crew_members",
   "column_break_nlky",
   "source_airport",
   "source_airport_code",
@@ -117,6 +118,12 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "route"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Airplane Flight Crew Member"
   }
  ],
  "grid_page_length": 50,
@@ -125,7 +132,7 @@
  "is_published_field": "is_published",
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-24 12:53:24.111406",
+ "modified": "2026-09-03 15:07:28.279496",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

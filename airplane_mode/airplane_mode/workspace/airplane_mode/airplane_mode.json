@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Airplane Mode",
  "links": [],
- "modified": "2026-06-22 10:57:13.157088",
+ "modified": "2026-09-03 14:44:57.738224",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Mode",
@@ -29,6 +29,18 @@
    "doc_view": "",
    "label": "Airlines",
    "link_to": "Airline",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "All Passengers",
+   "link_to": "Flight Passenger",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "All Airplanes",
+   "link_to": "Airplane",
    "type": "DocType"
   }
  ],

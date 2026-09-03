@@ -50,3 +50,14 @@ class AirplaneFlight(Document):
         base_route = f"{airline}-{source}-{destination}-{date}"
 
         self.route = make_autoname(f"{base_route}-.#####")
+    def on_update(self):
+        if not self.has_value_changed("custom_gate_number"):
+            return
+
+        frappe.enqueue(
+            "airplane_mode.tasks.sync_ticket_gate_numbers",
+            queue="default",
+            enqueue_after_commit=True,
+            flight_name=self.name,
+            gate_number=self.custom_gate_number,
+        )

@@ -246,3 +246,20 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
+fixtures = [
+	{
+		"doctype": "Shop Type",
+		"filters": [["name", "in", ["Stall", "Walk-through", "Normal"]]],
+	},
+	{
+		"doctype": "Custom Field",
+		"filters": [
+			["dt", "=", "Airport"],
+			[
+				"fieldname",
+				"in",
+				["custom_total_shops", "custom_available_shops", "custom_occupied_shops"],
+			],
+		],
+	},
+]
