@@ -262,4 +262,17 @@ fixtures = [
 			],
 		],
 	},
+	{
+		"doctype": "Print Format",
+		"filters": [["name", "=", "Rent Receipt"]],
+	},
+]
+scheduler_events = {
+    "monthly":[
+        "airplane_mode.tasks.send_monthly_rent_reminders",
+    ]
+}
+
+website_route_rules = [
+	{"from_route": "/shop-details", "to_route": "shop_details"},
 ]

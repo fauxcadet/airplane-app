@@ -44,7 +44,7 @@ class AirplaneTicket(Document):
         seat_letter = random.choice(["A", "B", "C", "D", "E"])
 
         self.seat = f"{seat_number}{seat_letter}"
-		self.custom_gate_number = frappe.db.get_value("Airplane Flight", self.flight, "custom_gate_number")
+        self.custom_gate_number = frappe.db.get_value("Airplane Flight", self.flight, "custom_gate_number")
     def remove_duplicate_add_ons(self):
         unique_items = []
         seen = set()

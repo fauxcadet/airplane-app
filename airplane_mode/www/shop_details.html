@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ shop.shop_name }} | Airport Shop Leasing</title>
+  <link rel="stylesheet" href="/assets/airplane_mode/css/picnic.min.css">
+  <link rel="stylesheet" href="/assets/airplane_mode/css/shop_portal.css">
+</head>
+<body class="shop-portal">
+  <main class="detail-page">
+    <a class="back-link" href="/shops">&larr; All available shops</a>
+    <section class="shop-detail-hero">
+      <div>
+        <p class="portal-kicker">{{ shop.airport }}</p>
+        <h1>{{ shop.shop_name }}</h1>
+        <p class="shop-detail">Space {{ shop.shop_number }} &middot; {{ shop.shop_type }}</p>
+      </div>
+      <span class="availability-badge">Available now</span>
+    </section>
+
+    <section class="detail-grid">
+      <div class="detail-image-wrap">
+        {% if shop.image %}
+        <img src="{{ shop.image }}" alt="{{ shop.shop_name }}">
+        {% else %}
+        <div class="shop-image-placeholder large-placeholder" aria-hidden="true">{{ shop.shop_number }}</div>
+        {% endif %}
+      </div>
+      <div class="detail-copy">
+        <h2>A high-traffic retail opportunity</h2>
+        <p>{{ shop.description or "Discuss this space with our leasing team to understand its location, passenger traffic, and fit for your business." }}</p>
+        <dl class="space-facts">
+          <div><dt>Airport</dt><dd>{{ shop.airport }}</dd></div>
+          <div><dt>Area</dt><dd>{{ shop.area_sq_ft }} sq ft</dd></div>
+          <div><dt>Monthly rent</dt><dd>{{ frappe.utils.fmt_money(shop.monthly_rent) }}</dd></div>
+        </dl>
+        <a class="button shop-cta" href="/shop-lead-web-form?shop={{ shop.name | urlencode }}">I am interested in this space</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

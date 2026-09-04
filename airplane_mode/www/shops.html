@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Airport Shops Available for Lease</title>
+  <link rel="stylesheet" href="/assets/airplane_mode/css/picnic.min.css">
+  <link rel="stylesheet" href="/assets/airplane_mode/css/shop_portal.css">
+</head>
+<body class="shop-portal">
+  <main>
+    <section class="portal-hero">
+      <p class="portal-kicker">Airport Shop Management</p>
+      <h1>Open the door to your next airport location.</h1>
+      <p class="portal-intro">Browse currently available retail spaces across our airport network.</p>
+    </section>
+
+    <section class="portal-content" aria-labelledby="available-shops">
+      <div class="section-heading">
+        <div>
+          <p class="portal-kicker">Leasing opportunities</p>
+          <h2 id="available-shops">Available Shops</h2>
+        </div>
+        <span class="shop-count">{{ shops | length }} spaces</span>
+      </div>
+
+      {% if shops %}
+      <div class="shop-grid">
+        {% for shop in shops %}
+        <article class="shop-card">
+          {% if shop.image %}
+          <img src="{{ shop.image }}" alt="{{ shop.shop_name }}">
+          {% else %}
+          <div class="shop-image-placeholder" aria-hidden="true">{{ shop.shop_number }}</div>
+          {% endif %}
+          <div class="shop-card-body">
+            <p class="shop-location">{{ shop.airport }}</p>
+            <h3>{{ shop.shop_name }}</h3>
+            <p class="shop-detail">{{ shop.shop_type }} &middot; {{ shop.area_sq_ft }} sq ft</p>
+            {% if shop.description %}<p class="shop-description">{{ shop.description }}</p>{% endif %}
+            <a class="button shop-cta" href="/shop-details?name={{ shop.name | urlencode }}">View space</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="empty-state">
+        <h3>No shops are available today.</h3>
+        <p>Please check again soon for new airport leasing opportunities.</p>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>
